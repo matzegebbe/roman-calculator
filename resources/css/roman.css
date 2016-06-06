@@ -1,0 +1,42 @@
+
+.roman-wrapper {
+  font-size: 42px;
+}
+
+.hidden{
+   display: none;
+}
+
+#calculator-wrapper {
+  height: 42px;
+  font-size: 42px;
+  line-height: 35px;
+}
+
+.btn {
+  min-width: 50px;
+  line-height: 50px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+a:focus, a:hover {
+    color: #23527c;
+    text-decoration: none;
+}
+
+#calc-history {
+   font-size: 20px;
+}
+
+span, #calc-history {
+  -ms-word-break: break-all;
+  word-break: break-all;
+
+  /* Non standard for webkit */
+  word-break: break-word;
+
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}

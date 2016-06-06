@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Roman Numerals FE</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./vendors/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./resources/css/roman.css" />
+  </head>
+
+  <body>
+
+  <div class="page-header">
+    <h3 href="./index.html">&nbsp;<i class="fa fa-calculator" aria-hidden="true"></i> Roman Numerals</a></h3>
+      <div id="google_translate_element"></div><script type="text/javascript">
+         function googleTranslateElementInit() {
+           new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
+         }
+      </script>
+  </div>
+
+<div class="container-fluid roman-wrapper">
+
+        <div class="row">
+                <div class="col-md-8">
+                   <span id="calculator-result"  class="">&nbsp;</span>
+                </div>
+        </div>
+        <div class="row">
+                <div class="col-md-8">
+                   <input id="calculator-screen" class="" />
+                </div>
+        </div>
+        <div class="row hidden">
+                <div class="col-md-8"
+                   <span id="arabic-calculator-result"  class="">&nbsp;</span>
+                </div>
+        </div>
+
+        <div id="calculator-field" class="notranslate">
+        <div class="row">
+            <div class="col-md-4">
+              <a href="#" class="btn" data-value="I" data-key="">I</a>
+              <a href="#" class="btn" data-value="V" data-key="">V</a>
+              <a href="#" class="btn" data-value="X" data-key="">X</a>
+              <a href="#" class="btn" data-constant="+" data-key="43">+</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+              <a href="#" class="btn" data-value="L" data-key="">L</a>
+              <a href="#" class="btn" data-value="C" data-key="">C</a>
+              <a href="#" class="btn" data-value="D" data-key="">D</a>
+              <a href="#" class="btn" data-constant="-" data-key="45">-</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+              <a href="#" class="btn" data-value="M" data-key="">M</a>
+              <a href="#" class="btn" data-constant="" data-key=""></a>
+              <a href="#" class="btn" data-constant="" data-key=""></a>
+              <a href="#" class="btn" data-constant="*" data-key="42">*</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+              <a href="#" class="btn btn-danger" data-method="reset" data-key="">C</a>
+              <a href="#" class="btn btn-primary" data-method="calculate" data-key="61">=</a>
+              <a href="#" class="btn" data-constant="" data-key=""></a>
+              <a href="#" class="btn" data-constant="/" data-key="47">/</a>
+            </div>
+        </div>
+</div>
+
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+         <div class="well">
+          <legend>history of this session</legend>
+          <div id="calc-panel">
+            <div id="calc-history">
+              <ol reversed id="calc-history-list"></ol>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+
+    </div>
+
+    <script src="./vendors/jquery/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="./resources/js/roman.js"></script>
+
+  </body>
+
+</html>
+
