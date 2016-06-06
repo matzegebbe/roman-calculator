@@ -1,3 +1,4 @@
+var myFirebaseRef = new Firebase("https://roman-calc.firebaseio.com/");
 $(document).ready(function() {
 
     $(".btn").click(function(e) {
@@ -64,12 +65,15 @@ function calculate(cstr) {
 }
 
 function addHistory(cstr, rresult, astr, aresult) {
-    var his = cstr + ' = ' + rresult + ' (' + astr + ' = ' + aresult + ' )';
-    $('#calc-history-list').prepend('<li>'+his+'</li>');
-    $.post( "http://www.blessuren.de:9000", { log: his })
-      .done(function( data ) {
-        console.log( data );
-    });
+    var his = new Object();
+    his.cstr = cstr;
+    his.rresult = rresult;
+    his.astr = astr;
+    his.aresult = aresult;
+    var jhis = JSON.stringify(his);
+    myFirebaseRef.push().set(jhis);
+    var shis = cstr + ' = ' + rresult + ' (' + astr + ' = ' + aresult + ' )';
+    $('#calc-history-list').prepend('<li>'+shis+'</li>');
 }
 
 function reset() {
