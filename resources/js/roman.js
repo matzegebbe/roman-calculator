@@ -54,6 +54,9 @@ function calculate(cstr) {
     if (aresult <= 0) {
         $('#calculator-result').html('<p class="bg-danger">Error. Result below or equal to zero.</p>');
         return;
+    }else if(Math.floor(aresult) !== aresult){
+        $('#calculator-result').html('<p class="bg-danger">Error. Result is no Integer.</p>');
+        return;
     }
 
     var rresult = romanize(aresult);
