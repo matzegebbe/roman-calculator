@@ -1,4 +1,6 @@
-var myFirebaseRef = new Firebase("https://roman-calc.firebaseio.com/");
+var ref = new Firebase("https://roman-calc.firebaseio.com/");
+var hisRef = ref.child("history");
+
 $(document).ready(function() {
 
     $(".btn").click(function(e) {
@@ -68,16 +70,14 @@ function calculate(cstr) {
 }
 
 function addHistory(cstr, rresult, astr, aresult) {
-    var his = new Object();
-    his.cstr = cstr;
-    his.rresult = rresult;
-    his.astr = astr;
-    his.aresult = aresult;
-    var jhis = JSON.stringify(his);
-    myFirebaseRef.push().set(jhis);
-    var shis = cstr + ' = ' + rresult + ' (' + astr + ' = ' + aresult + ' )';
-    $('#calc-history-list').prepend('<li>'+shis+'</li>');
+    hisRef.push().set({cstr:cstr,rresult:rresult,astr:astr,aresult:aresult});
 }
+
+hisRef.on("child_added", function(snapshot) {
+  var newPost = snapshot.val();
+  var shis = newPost.cstr + ' = ' + newPost.rresult + ' (' + newPost.astr + ' = ' + newPost.aresult + ' )';
+  $('#calc-history-list').prepend('<li>'+shis+'</li>');
+});
 
 function reset() {
     result = 0;
